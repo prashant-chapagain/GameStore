@@ -2,7 +2,7 @@ using GameStore.Api.Entities;
 
 namespace GameStore.Api.Repositories;
 
-public class InMemGamesRepository
+public class InMemGamesRepository : IGamesRepository
 {
     private readonly List<Game> games = new()
 {
@@ -57,5 +57,15 @@ public class InMemGamesRepository
     {
         var index = games.FindIndex(game => game.ID == id);
         games.RemoveAt(index);
+    }
+
+    public Game? get(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void update(Game updatedGame)
+    {
+        throw new NotImplementedException();
     }
 }
